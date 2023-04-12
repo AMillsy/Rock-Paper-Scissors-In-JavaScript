@@ -4,7 +4,7 @@ const forceResponse = `r`;
 
 function initializeGame() {
   const playerResponse = prompt(`Rock, Paper or Scissors?`)
-    .slice(0, 1)
+    ?.slice(0, 1) //Using question mark to check if I can slice with the response they have given
     .toLowerCase(); //Gets the response and gets the first letter because R, P, S are all different letters and then make it lowercase.
 
   const computersChoice = Math.floor(Math.random() * 3); //Gives a number between
@@ -42,7 +42,14 @@ function compareResponses(player, computer) {
         alert(`Incorrect Reponse, try again`);
     }
   }
+  showScores();
   initializeGame();
+}
+
+function showScores() {
+  alert(
+    `Players score: ${scores[0]} \nComputer's score: ${scores[1]} \n Drawn: ${scores[2]}`
+  );
 }
 
 initializeGame();
